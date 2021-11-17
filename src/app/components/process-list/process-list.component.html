@@ -1,0 +1,19 @@
+<h4>Processes</h4>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Key</th>
+            <th scope="col">Name</th>
+            <th scope="col">Latest Version</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let process of processes" style="cursor: pointer;" routerLink="{{process.key}}/info">
+            <td>{{process.key}}</td>
+            <td>{{process.name == null ? process.key : process.name}}</td>
+            <td>{{process.version}}</td>
+        </tr>
+    </tbody>
+</table>

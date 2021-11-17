@@ -1,0 +1,23 @@
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">id</th>
+            <th scope="col">name</th>
+            <th scope="col">start time</th>
+            <th scope="col">end time</th>
+            <th scope="col">assignee</th>
+            <th scope="col">deleteReason</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let task of taskListHistory" style="cursor: default;">
+            <td>{{task.id}}</td>
+            <td>{{task.name}}</td>
+            <td>{{task.startTime | date:'dd/MM/yyyy HH:mm'}}</td>
+            <td>{{task.endTime | date:'dd/MM/yyyy HH:mm'}}</td>
+            <td>{{task.assignee}}</td>
+            <td>{{task.deleteReason}}</td>
+        </tr>
+    </tbody>
+</table>

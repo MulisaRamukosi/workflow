@@ -1,0 +1,27 @@
+<h4>Running Instances</h4>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">id</th>
+            <th scope="col">state</th>
+            <th scope="col">start time</th>
+            <th scope="col">end time</th>
+            <th scope="col">delete reason</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let processInstance of processInstances" style="cursor: pointer;" routerLink="./{{processInstance.id}}/tasklisthistory">
+            <td>{{processInstance.id}}</td>
+            <td>{{processInstance.state}}</td>
+            <td>{{processInstance.startTime | date:'dd/MM/yyyy HH:mm'}}</td>
+            <td>{{processInstance.endTime | date:'dd/MM/yyyy HH:mm'}}</td>
+            <td>{{processInstance.deleteReason}}</td>
+        </tr>
+    </tbody>
+</table>
+
+<h4>Process instance tasklist history</h4>
+
+<router-outlet></router-outlet>
